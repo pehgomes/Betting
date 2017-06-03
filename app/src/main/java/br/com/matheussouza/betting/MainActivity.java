@@ -28,8 +28,23 @@ public class MainActivity extends AppCompatActivity {
         fazerAposta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Aposta.class);
+                Intent intent = new Intent(getApplicationContext(), CadastroAposta.class);
                 startActivity(intent);
+            }
+        });
+
+        consultarAposta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
+                startActivity(intent);
+            }
+        });
+
+        realizarSorteio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

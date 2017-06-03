@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.matheussouza.betting.Aposta">
+    tools:context="br.com.matheussouza.betting.CadastroAposta">
 
     <TextView
         android:id="@+id/label_nome"
@@ -41,5 +41,14 @@
         android:layout_below="@id/label_aposta"
         android:layout_marginLeft="16dp"
         android:inputType="number"/>
+
+    <Button
+        android:id="@+id/bt_cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:text="Cadastrar"/>
 
 </RelativeLayout>
