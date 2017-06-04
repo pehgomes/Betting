@@ -1,4 +1,4 @@
-package br.com.matheussouza.betting;
+package br.com.pedro.apostando;
 
 import android.content.Intent;
 import android.os.Bundle;
