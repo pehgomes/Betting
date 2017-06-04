@@ -20,12 +20,12 @@ public class Principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        menuOpcoes = (FloatingActionMenu) findViewById(R.id.menu_opcao);
-        fazerAposta = (FloatingActionButton) findViewById(R.id.fazer_aposta);
-        consultarAposta = (FloatingActionButton) findViewById(R.id.consultar_aposta);
-        realizarSorteio = (FloatingActionButton) findViewById(R.id.realizar_sorteio);
+        menu = (FloatingActionMenu) findViewById(R.id.menu_opcao);
+        apostar = (FloatingActionButton) findViewById(R.id.fazer_aposta);
+        consultar = (FloatingActionButton) findViewById(R.id.consultar_aposta);
+        realizarSorteios = (FloatingActionButton) findViewById(R.id.realizar_sorteio);
 
-        fazerAposta.setOnClickListener(new View.OnClickListener() {
+        apostar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CadastroAposta.class);
@@ -33,7 +33,7 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-        consultarAposta.setOnClickListener(new View.OnClickListener() {
+        consultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
@@ -42,7 +42,7 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-        realizarSorteio.setOnClickListener(new View.OnClickListener() {
+        realizarSorteios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int numero = sortear();
