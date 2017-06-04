@@ -1,4 +1,4 @@
-package br.com.matheussouza.betting;
+package br.com.pedro.apostando;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
