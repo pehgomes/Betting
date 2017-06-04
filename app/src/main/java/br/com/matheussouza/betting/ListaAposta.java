@@ -9,14 +9,14 @@ import java.util.List;
 public class ListaAposta extends AppCompatActivity {
 
     private ListView listaAposta;
-    private List<ApostaEntity> apostas;
+    private List<Aposta> apostas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_aposta);
 
-        apostas = ApostaEntity.listAll(ApostaEntity.class);
+        apostas = Aposta.listAll(Aposta.class);
         listaAposta = (ListView) findViewById(R.id.lista_aposta);
 
         ApostaAdapter adapter = new ApostaAdapter(getApplicationContext(), apostas);
