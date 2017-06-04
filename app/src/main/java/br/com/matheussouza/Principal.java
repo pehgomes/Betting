@@ -20,12 +20,12 @@ public class Principal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        menu = (FloatingActionMenu) findViewById(R.id.menu_opcao);
-        apostar = (FloatingActionButton) findViewById(R.id.fazer_aposta);
-        consultar = (FloatingActionButton) findViewById(R.id.consultar_aposta);
-        realizarSorteios = (FloatingActionButton) findViewById(R.id.realizar_sorteio);
+        menuOpcoes = (FloatingActionMenu) findViewById(R.id.menu_opcao);
+        fazerAposta = (FloatingActionButton) findViewById(R.id.fazer_aposta);
+        consultarAposta = (FloatingActionButton) findViewById(R.id.consultar_aposta);
+        realizarSorteio = (FloatingActionButton) findViewById(R.id.realizar_sorteio);
 
-        apostar.setOnClickListener(new View.OnClickListener() {
+        fazerAposta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CadastroAposta.class);
@@ -33,19 +33,29 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-        consultar.setOnClickListener(new View.OnClickListener() {
+        consultarAposta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
+                intent.putExtra("tela", "1");
                 startActivity(intent);
             }
         });
 
-        realizarSorteios.setOnClickListener(new View.OnClickListener() {
+        realizarSorteio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int numero = sortear();
+                Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
+                intent.putExtra("tela", "2");
+                intent.putExtra("numeroSorteado", numero);
+                startActivity(intent);
             }
         });
     }
+
+    public int sortear() {
+        Random random = new Random();
+        int numeroSorteado = random.nextInt(99);
+        return numeroSorteado;
 }
