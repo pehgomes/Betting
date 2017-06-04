@@ -2,9 +2,6 @@ package br.com.matheussouza.betting;
 
 import com.orm.SugarRecord;
 
-/**
- * Created by matheus on 03/06/17.
- */
 
 public class Aposta extends SugarRecord<ApostaEntity> {
 
