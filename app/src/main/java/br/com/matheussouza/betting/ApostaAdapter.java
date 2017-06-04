@@ -53,10 +53,10 @@ public class ApostaAdapter extends BaseAdapter {
         apostaEntity.setNumeroAposta(apostas.get(position).getNumeroAposta());
 
         TextView nome = (TextView) view.findViewById(R.id.nome_apostador);
-        //TextView numero = (TextView) view.findViewById(R.id.numero_aposta);
+        TextView numeroAposta = (TextView) view.findViewById(R.id.numero_aposta);
 
         nome.setText(apostaEntity.getNome());
-        //numero.setText(apostaEntity.getNumeroAposta());
+        numeroAposta.setText(String.valueOf(apostaEntity.getNumeroAposta()));
 
         return view;
     }

@@ -8,6 +8,10 @@ import android.view.View;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private FloatingActionMenu menuOpcoes;
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
+                intent.putExtra("tela", 1);
                 startActivity(intent);
             }
         });
@@ -44,8 +49,18 @@ public class MainActivity extends AppCompatActivity {
         realizarSorteio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int numero = sortear();
+                Intent intent = new Intent(getApplicationContext(), ListaAposta.class);
+                intent.putExtra("tela", 2);
+                intent.putExtra("numeroSorteado", numero);
+                startActivity(intent);
             }
         });
+    }
+
+    public int sortear() {
+        Random random = new Random();
+        int numeroSorteado = random.nextInt(99);
+        return numeroSorteado;
     }
 }
