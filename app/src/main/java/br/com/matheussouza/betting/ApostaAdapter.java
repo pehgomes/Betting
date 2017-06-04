@@ -9,10 +9,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by matheus on 03/06/17.
- */
-
 public class ApostaAdapter extends BaseAdapter {
 
     private List<Aposta> apostas;
