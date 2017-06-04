@@ -1,4 +1,4 @@
-package br.com.matheussouza.betting;
+package br.com.pedro.apostando;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ApostaAdapter extends BaseAdapter {
 
-    private List<ApostaEntity> apostas;
+    private List<Aposta> apostas;
     private Context context;
 
     public ApostaAdapter(Context context, List<ApostaEntity> apostas) {
@@ -23,14 +23,16 @@ public class ApostaAdapter extends BaseAdapter {
         this.apostas = apostas;
     }
 
-    @Override
-    public int getCount() {
-        return apostas.size();
-    }
+  
 
     @Override
     public Object getItem(int position) {
         return apostas.get(position);
+    }
+    
+      @Override
+    public int getCount() {
+        return apostas.size();
     }
 
     @Override
@@ -48,14 +50,14 @@ public class ApostaAdapter extends BaseAdapter {
             view = convertView;
         }
 
-        ApostaEntity apostaEntity = apostas.get(position);
-        apostaEntity.setNome(apostas.get(position).getNome());
-        apostaEntity.setNumeroAposta(apostas.get(position).getNumeroAposta());
+        Aposta aposta = apostas.get(position);
+        aposta.setNome(apostas.get(position).getNome());
+        aposta.setNumeroAposta(apostas.get(position).getNumeroAposta());
 
         TextView nome = (TextView) view.findViewById(R.id.nome_apostador);
         //TextView numero = (TextView) view.findViewById(R.id.numero_aposta);
 
-        nome.setText(apostaEntity.getNome());
+        nome.setText(aposta.getNome());
         //numero.setText(apostaEntity.getNumeroAposta());
 
         return view;
