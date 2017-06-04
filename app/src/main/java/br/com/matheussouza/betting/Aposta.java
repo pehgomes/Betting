@@ -6,16 +6,16 @@ import com.orm.SugarRecord;
  * Created by matheus on 03/06/17.
  */
 
-public class ApostaEntity extends SugarRecord<ApostaEntity> {
+public class Aposta extends SugarRecord<ApostaEntity> {
 
     String nome;
     int numeroAposta;
 
-    public ApostaEntity() {
+    public Aposta() {
 
     }
 
-    public ApostaEntity(String nome, int numeroAposta) {
+    public Aposta(String nome, int numeroAposta) {
         this.nome = nome;
         this.numeroAposta = numeroAposta;
     }
